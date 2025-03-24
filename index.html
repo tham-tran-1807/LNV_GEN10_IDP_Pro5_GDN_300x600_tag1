@@ -22,6 +22,7 @@
     </div>
 
     <script>
+        // 🚀 Gán URL clickTag theo chuẩn GDN
         window.clickTag = "https://www.lenovo.com/sg/en/";
 
         var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
@@ -73,9 +74,10 @@
             AdobeAn.compositionLoaded(lib.properties.id);
             fnStartAnimation();
 
-            // 🎯 Click vào banner mở URL (trừ nút Replay nếu có)
+            // 🎯 Gán sự kiện click vào banner để mở link clickTag
             anim_container.addEventListener("click", function(evt) {
                 if (!exportRoot.btn_replay || evt.target !== exportRoot.btn_replay) {
+                    console.log("🎯 Click vào banner -> Mở URL:", window.clickTag);
                     window.open(window.clickTag, '_blank');
                 }
             });
